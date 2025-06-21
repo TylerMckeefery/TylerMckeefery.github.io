@@ -1,7 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercenary Labs | Penetration Testing Specialist</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #00ffcc;
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+    .badge {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #00ffcc;
+      border-radius: 10px;
+      font-weight: bold;
+      background-color: #1a1a1a;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I represent Mercenary Labs.</p>
+  <h1>Mercenary Labs</h1>
+  <p>Welcome. I'm a solo operator with a record of taking down over 40 botnets.</p>
+  <p>I specialize in <strong>penetration testing</strong>, with deep skills in <strong>network-level attacks</strong>, reconnaissance, and lateral movement.</p>
+  <p>Fluent in <strong>C++</strong>, trained in <strong>CCNA</strong> fundamentals, and always hunting for the next challenge.</p>
+
+  <div class="badge">Network Penetration Expert</div>
+  <div class="badge">C++ Coder</div>
+  <div class="badge">Botnet Slayer</div>
+  
+  <p style="margin-top:40px;"><a href="https://github.com/YOURUSERNAME">Visit my GitHub</a></p>
 </body>
 </html>
