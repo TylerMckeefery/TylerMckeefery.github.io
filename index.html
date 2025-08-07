@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Name Here | </title>
+  <title>Tyler McKeefery | Cybersecurity Portfolio</title>
   <style>
     body {
       background-color: #ffffff;
@@ -54,10 +54,19 @@
 </head>
 <body>
 
-  <h1>Name Here</h1>
+  <nav style="margin-bottom: 30px; text-align: center;">
+    <a href="#about" style="margin-right: 15px;">About</a>
+    <a href="#skills" style="margin-right: 15px;">Skills</a>
+    <a href="#education" style="margin-right: 15px;">Education</a>
+    <a href="#certifications" style="margin-right: 15px;">Certifications</a>
+    <a href="#writeups" style="margin-right: 15px;">Write-ups</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <h1 id="top">Tyler McKeefery</h1>
   <p><strong>Cybersecurity Associate • Digital Forensics • Penetration Testing</strong></p>
 
-  <div class="section">
+  <div class="section" id="about">
     <h2>About Me</h2>
     <p>
       Recent graduate with an Associate of Applied Science in Cyber Defense and Digital Forensics.
@@ -65,7 +74,7 @@
     </p>
   </div>
 
-  <div class="section">
+  <div class="section" id="skills">
     <h2>Technical Skills</h2>
     <span class="badge">Nmap</span>
     <span class="badge">C++</span>
@@ -75,7 +84,7 @@
     <span class="badge">Penetration Testing</span>
   </div>
 
-  <div class="section">
+  <div class="section" id="education">
     <h2>Education</h2>
     <p>
       <strong>Associate of Applied Science</strong><br/>
@@ -84,7 +93,7 @@
     </p>
   </div>
 
-  <div class="section">
+  <div class="section" id="certifications">
     <h2>Certifications</h2>
     <ul>
       <li>Google Cybersecurity Certification</li>
@@ -93,14 +102,72 @@
     </ul>
   </div>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p><a href="https://github.com/TylerMckeefery" target="_blank">GitHub Profile</a></p>
-  </div>
+  <section id="writeups" style="padding: 2rem; background-color: #0f0f0f; color: #e0e0e0; font-family: 'Courier New', monospace;">
+    <h2 style="border-bottom: 2px solid #00ff99;">🧠 Matrix-Breakout: 2 Morpheus — VulnHub Walkthrough</h2>
+    <p><strong>Platform:</strong> VulnHub<br>
+       <strong>Difficulty:</strong> Intermediate<br>
+       <strong>Tools Used:</strong> nmap, ffuf, LinPEAS, Dirty Pipe exploit, Netcat, Burp Suite, php://filter</p>
+    <h3>🧭 Reconnaissance</h3>
+    <ul>
+      <li>Identified target IP using <code>arp-scan</code></li>
+      <li>Ran full port scan with <code>nmap</code> revealing ports 22, 80, and 81</li>
+      <li>Apache served Matrix-themed hints</li>
+    </ul>
+    <h3>🔍 Enumeration</h3>
+    <ul>
+      <li>Discovered hidden files with <code>ffuf</code>: graffiti.php, robots.txt</li>
+      <li>Exploited <code>graffiti.php</code> for command injection</li>
+    </ul>
+    <h3>🐚 Exploitation</h3>
+    <ul>
+      <li>Established reverse shell using Netcat</li>
+      <li>Used <code>LinPEAS</code> to find Dirty Pipe vulnerability</li>
+      <li>Compiled and executed exploit to gain root</li>
+    </ul>
+    <h3>🏁 Root Flag</h3>
+    <p>Successfully escalated privileges and captured the root flag.</p>
+    <h3>🧠 Lessons Learned</h3>
+    <ul>
+      <li>Thorough enumeration reveals multiple attack surfaces</li>
+      <li>Command injection and <code>php://filter</code> are powerful vectors</li>
+      <li>Dirty Pipe is a real-world privilege escalation exploit worth mastering</li>
+    </ul>
+    <h3>📎 References</h3>
+    <ul>
+      <li><a href="https://medium.com/@smile09/vulnhub-matrix-breakout-2-morpheus-walkthrough-0b272c71d192" target="_blank" style="color: #00ff99;">Original Medium Walkthrough</a></li>
+      <li><a href="https://github.com/AlexsanderShaw/Vulnhub_Training/blob/main/vulnhub_Walkthrough-Matrix-breakout-2-Morpheus.md" target="_blank" style="color: #00ff99;">GitHub Write-up</a></li>
+      <li><a href="https://www.vulnhub.com/entry/matrix-breakout-2-morpheus,757/" target="_blank" style="color: #00ff99;">VulnHub Machine Page</a></li>
+    </ul>
 
-  <footer>
-    &copy; 2025 Name Here. All rights reserved.
-  </footer>
-
-</body>
-</html>
+    <h2 style="border-bottom: 2px solid #00ff99; margin-top: 3rem;">🧠 Mercury — VulnHub Walkthrough</h2>
+    <p><strong>Platform:</strong> VulnHub<br>
+       <strong>Difficulty:</strong> Easy<br>
+       <strong>Tools Used:</strong> netdiscover, nmap, gobuster, sqlmap, SSH, sudo, vi exploit</p>
+    <h3>🧭 Reconnaissance</h3>
+    <ul>
+      <li>Used <code>netdiscover</code> to identify target IP</li>
+      <li>Scanned with <code>nmap</code> to find open ports: 22 (SSH), 8080 (HTTP)</li>
+    </ul>
+    <h3>🔍 Enumeration</h3>
+    <ul>
+      <li>Used <code>gobuster</code> to find hidden directories</li>
+      <li>Found SQL injection vulnerability in mercury facts directory</li>
+    </ul>
+    <h3>🐚 Exploitation</h3>
+    <ul>
+      <li>Used <code>sqlmap</code> to dump credentials</li>
+      <li>Logged in via SSH as <code>webmaster</code></li>
+      <li>Escalated privileges using <code>sudo vi</code> exploit</li>
+    </ul>
+    <h3>🏁 Root Flag</h3>
+    <p>Gained root access and captured both user and root flags.</p>
+    <h3>🧠 Lessons Learned</h3>
+    <ul>
+      <li>SQL injection can be a powerful entry point</li>
+      <li>Always check <code>sudo -l</code> for privilege escalation paths</li>
+      <li>Simple misconfigurations can lead to full compromise</li>
+    </ul>
+    <h3>📎 References</h3>
+    <ul>
+      <li><a href="https://ra2302.github.io/posts/Mercury/" target="_blank" style="color: #00ff99;">Ra-Sec Mercury Write-up</a></li>
+      <li><a href="https://www.vulnhub.com
