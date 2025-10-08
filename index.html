@@ -5,61 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tyler McKeefery | Cybersecurity Portfolio</title>
   <style>
+    /* TRON THEME */
     body {
-      background-color: #ffffff;
-      color: #222;
-      font-family: Arial, sans-serif;
-      max-width: 800px;
+      background: radial-gradient(ellipse at center, #000000 0%, #05080f 100%);
+      color: #00fff9;
+      font-family: 'Courier New', monospace;
+      max-width: 900px;
       margin: 50px auto;
       padding: 20px;
-      line-height: 1.6;
+      line-height: 1.7;
+      text-shadow: 0 0 5px #00fff9, 0 0 10px #00fff9;
     }
 
     h1, h2 {
-      color: #1a1a1a;
-      border-bottom: 2px solid #00aaff;
+      color: #00fff9;
+      border-bottom: 2px solid #00fff9;
       padding-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
-    a {
-      color: #00aaff;
+    nav a {
+      color: #00fff9;
       text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00fff9;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9;
     }
 
     .section {
       margin-top: 40px;
+      background: rgba(0, 255, 249, 0.05);
+      padding: 20px;
+      border: 1px solid #00fff9;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 249, 0.2);
     }
 
     .badge {
       display: inline-block;
-      background-color: #e6f7ff;
-      color: #005580;
+      background: rgba(0, 255, 249, 0.1);
+      color: #00fff9;
       padding: 5px 10px;
       margin: 5px;
       border-radius: 5px;
       font-size: 0.9em;
+      border: 1px solid #00fff9;
+      text-shadow: 0 0 5px #00fff9;
+    }
+
+    img.cert-img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #00fff9;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px #00fff9;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: #00fff9;
+      text-shadow: 0 0 5px #00fff9;
+    }
+
+    a {
+      color: #00fff9;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00fff9;
     }
 
     footer {
       margin-top: 60px;
       text-align: center;
       font-size: 0.9em;
-      color: #666;
+      color: #00fff9;
+      opacity: 0.7;
+    }
+
+    code {
+      background: rgba(0, 255, 249, 0.1);
+      padding: 2px 5px;
+      border-radius: 3px;
+      border: 1px solid #00fff9;
+      color: #00fff9;
+    }
+
+    #writeups {
+      background: rgba(0, 255, 249, 0.08);
+      border: 1px solid #00fff9;
+      box-shadow: 0 0 20px rgba(0, 255, 249, 0.2);
     }
   </style>
 </head>
 <body>
 
   <nav style="margin-bottom: 30px; text-align: center;">
-    <a href="#about" style="margin-right: 15px;">About</a>
-    <a href="#skills" style="margin-right: 15px;">Skills</a>
-    <a href="#education" style="margin-right: 15px;">Education</a>
-    <a href="#certifications" style="margin-right: 15px;">Certifications</a>
-    <a href="#writeups" style="margin-right: 15px;">Write-ups</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#writeups">Write-ups</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -94,19 +156,16 @@
   </div>
 
   <div class="section" id="certifications">
-    <h2>Certifications</h2>
+    <h2>Certifications</h2>
+    <img src="images/certs.png" alt="A collection of Cisco, Google, and Certiport IT and Cybersecurity Certifications" class="cert-img">
+    <ul>
+      <li>Google Cybersecurity Certification</li>
+      <li>CCNA Fundamentals (through coursework)</li>
+    </ul>
+  </div>
 
-        <img src="images/certs.png" 
-         alt="A collection of Cisco, Google, and Certiport IT and Cybersecurity Certifications" 
-         style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
-    
-    <ul>
-      <li>Google Cybersecurity Certification</li>
-      <li>CCNA Fundamentals (through coursework)</li>
-    </ul>
-</div>
-  <section id="writeups" style="padding: 2rem; background-color: #f5f5f5; color: #222; font-family: 'Courier New', monospace;">
-    <h2 style="border-bottom: 2px solid #00aaff;">Matrix-Breakout: 2 Morpheus — VulnHub Walkthrough</h2>
+  <section id="writeups" class="section">
+    <h2>Matrix-Breakout: 2 Morpheus — VulnHub Walkthrough</h2>
     <p><strong>Platform:</strong> VulnHub<br>
        <strong>Difficulty:</strong> Intermediate<br>
        <strong>Tools Used:</strong> nmap, ffuf, LinPEAS, Dirty Pipe exploit, Netcat, Burp Suite, php://filter</p>
@@ -142,7 +201,7 @@
       <li><a href="https://www.vulnhub.com/entry/matrix-breakout-2-morpheus,757/" target="_blank">VulnHub Machine Page</a></li>
     </ul>
 
-    <h2 style="border-bottom: 2px solid #00aaff; margin-top: 3rem;">Mercury — VulnHub Walkthrough</h2>
+    <h2>Mercury — VulnHub Walkthrough</h2>
     <p><strong>Platform:</strong> VulnHub<br>
        <strong>Difficulty:</strong> Easy<br>
        <strong>Tools Used:</strong> netdiscover, nmap, gobuster, sqlmap, SSH, sudo, vi exploit</p>
@@ -179,5 +238,8 @@
 
   <div class="section" id="contact">
     <h2>Contact</h2>
-    <p>
-      <a href="mailto:tylermckeefery@gmail.com">tylermckeefery@gmail.com
+    <p><a href="mailto:tylermckeefery@gmail.com">tylermckeefery@gmail.com</a></p>
+  </div>
+
+</body>
+</html>
